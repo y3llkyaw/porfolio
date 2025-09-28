@@ -23,6 +23,13 @@ class ProjectWidget extends StatelessWidget {
             ),
           ),
           ProjectTile(
+            title: "Meow Tarot",
+            subtitle:
+                "Fun Project that use nanabanana generated graphic to make tarot reading application with smooth and rich animation.",
+            tag: "flutter",
+            url: "https://meowtarot.vercel.app",
+          ),
+          ProjectTile(
             title: "Mood Mate",
             subtitle:
                 "A Flutter app that helps users track moods, analyze emotional trends, and connect with others through a smart matching algorithm and real-time chat.",
