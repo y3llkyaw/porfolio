@@ -9,7 +9,6 @@ class Themes {
       secondary: Colors.black,
       surface: Colors.white,
       onSurface: Colors.black,
-      background: Color(0xFFF5F5F5),
     ),
     scaffoldBackgroundColor: const Color(0xFFF5F5F5),
     appBarTheme: const AppBarTheme(
