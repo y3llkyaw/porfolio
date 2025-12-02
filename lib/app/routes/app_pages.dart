@@ -1,6 +1,9 @@
 import 'package:get/get.dart';
 import 'package:porfolio_yhk/app/bindings/admin_binding.dart';
-import 'package:porfolio_yhk/app/ui/pages/admin/admin_page.dart';
+import 'package:porfolio_yhk/app/bindings/admin_home_page_binding.dart';
+import 'package:porfolio_yhk/app/routes/middlewares/admin_auth_middleware.dart';
+import 'package:porfolio_yhk/app/ui/pages/admin/admin_home_page/admin_home_page.dart';
+import 'package:porfolio_yhk/app/ui/pages/admin/admin_login_page.dart';
 
 import '../bindings/home_binding.dart';
 import '../ui/pages/home_page/home_page.dart';
@@ -25,10 +28,19 @@ class AppPages {
       transition: _defaultTransition,
     ),
     GetPage(
+      name: AppRoutes.ADMIN_HOME,
+      page: () => AdminHomePage(),
+      binding: AdminHomePageBinding(),
+      transition: _defaultTransition,
+      middlewares: [
+        AdminAuthMiddleware(),
+      ],
+    ),
+    GetPage(
       name: AppRoutes.ADMIN,
-      page: () => AdminPage(),
+      page: () => AdminLoginPage(),
       binding: AdminBinding(),
       transition: _defaultTransition,
-    )
+    ),
   ];
 }

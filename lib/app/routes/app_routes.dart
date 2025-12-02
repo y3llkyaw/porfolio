@@ -2,5 +2,6 @@
 class AppRoutes {
   static const HOME = '/';
   static const UNKNOWN = '/404';
-  static const ADMIN = "/admin";
+  static const ADMIN = "/admin/login";
+  static const ADMIN_HOME = "/admin/";
 }

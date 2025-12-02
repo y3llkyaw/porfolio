@@ -6,6 +6,7 @@ class AdminLoginController extends GetxController {
   var isLoading = false.obs;
 
   Future<void> adminLogin(String email, String password) async {
+    isLoading.value = true;
     try {
       await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
@@ -13,6 +14,7 @@ class AdminLoginController extends GetxController {
     } catch (e) {
       log('Unknown error: $e');
     }
+    isLoading.value = false;
   }
 
   Future<void> logout(String email, String password) async {

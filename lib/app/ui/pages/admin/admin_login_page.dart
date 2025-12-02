@@ -6,8 +6,8 @@ import 'package:porfolio_yhk/app/controllers/admin_login_controller.dart';
 import 'package:porfolio_yhk/app/controllers/darkmode_controller.dart';
 import 'package:porfolio_yhk/app/ui/global_widgets/navbar_widget.dart';
 
-class AdminPage extends GetView<AdminBinding> {
-  AdminPage({Key? key}) : super(key: key);
+class AdminLoginPage extends GetView<AdminBinding> {
+  AdminLoginPage({Key? key}) : super(key: key);
   final DarkModeController darkModeController = Get.find<DarkModeController>();
   final AdminLoginController adminLoginController =
       Get.put(AdminLoginController());
@@ -54,7 +54,7 @@ class TabletLayout extends StatelessWidget {
 }
 
 class WebLayout extends StatefulWidget {
-  WebLayout({Key? key}) : super(key: key);
+  const WebLayout({Key? key}) : super(key: key);
 
   @override
   State<WebLayout> createState() => _WebLayoutState();
@@ -120,9 +120,6 @@ class _WebLayoutState extends State<WebLayout> {
                   ),
                   ElevatedButton(
                     onPressed: () async {
-                      print(emailController.text);
-                      print(passwordController.text);
-
                       await adminLoginController.adminLogin(
                           emailController.text, passwordController.text);
                     },
