@@ -47,18 +47,18 @@ class WebLayout extends StatelessWidget {
           () => ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                ),
-                child: Text(
-                  'Admin Menu',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
+              // DrawerHeader(
+              //   decoration: BoxDecoration(
+              //     color: Get.theme.primaryColor,
+              //   ),
+              //   child: Text(
+              //     'Admin Menu',
+              //     style: TextStyle(
+              //       color: Colors.white,
+              //       fontSize: 24,
+              //     ),
+              //   ),
+              // ),
               ListTile(
                 onTap: () {
                   controller.selectedIndex.value = 0;
