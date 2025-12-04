@@ -13,7 +13,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   usePathUrlStrategy();
   await DependecyInjection.init();
-  Get.put(DarkModeController()); // Inject DarkModeController
+  Get.put(DarkModeController());
   runApp(const MyApp());
 }
 

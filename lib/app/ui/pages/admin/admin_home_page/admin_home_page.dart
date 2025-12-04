@@ -40,25 +40,14 @@ class WebLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Admin Home Page'),
+        title: Obx(() => Text(
+            '${controller.selectedIndex.value == 0 ? "Projects" : controller.selectedIndex.value == 1 ? "Education and Experiences" : "Skills"} Page')),
       ),
       drawer: Drawer(
         child: Obx(
           () => ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
-              // DrawerHeader(
-              //   decoration: BoxDecoration(
-              //     color: Get.theme.primaryColor,
-              //   ),
-              //   child: Text(
-              //     'Admin Menu',
-              //     style: TextStyle(
-              //       color: Colors.white,
-              //       fontSize: 24,
-              //     ),
-              //   ),
-              // ),
               ListTile(
                 onTap: () {
                   controller.selectedIndex.value = 0;
@@ -75,7 +64,7 @@ class WebLayout extends StatelessWidget {
                 },
                 selected: controller.selectedIndex.value == 1,
                 leading: Icon(Icons.school),
-                title: Text('Educations'),
+                title: Text('E & E'),
               ),
               ListTile(
                 selected: controller.selectedIndex.value == 2,

@@ -20,10 +20,10 @@ class AdminLoginPage extends GetView<AdminBinding> {
           builder: (context, constraints) {
             if (constraints.maxWidth < 600) {
               // Mobile
-              return MobileLayout();
+              return WebLayout();
             } else if (constraints.maxWidth < 1024) {
               // Tablet
-              return TabletLayout();
+              return WebLayout();
             } else {
               // Web / Desktop
               return WebLayout();
@@ -85,7 +85,7 @@ class _WebLayoutState extends State<WebLayout> {
             NavBarWidget(),
             Spacer(),
             SizedBox(
-              width: Get.width * 0.3,
+              width: Get.width * 0.5,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 20,
@@ -120,8 +120,12 @@ class _WebLayoutState extends State<WebLayout> {
                   ),
                   ElevatedButton(
                     onPressed: () async {
-                      await adminLoginController.adminLogin(
-                          emailController.text, passwordController.text);
+                      await adminLoginController
+                          .adminLogin(
+                              emailController.text, passwordController.text)
+                          .then((v) {
+                        Get.offNamed("/admin");
+                      });
                     },
                     child: Text("Login"),
                   )
