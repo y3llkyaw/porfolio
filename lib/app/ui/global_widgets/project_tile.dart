@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:icons_plus/icons_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectTile extends StatelessWidget {
@@ -10,12 +10,14 @@ class ProjectTile extends StatelessWidget {
     required this.title,
     required this.subtitle,
     required this.url,
+    required this.githubUrl,
     required this.tag,
   }) : super(key: key);
 
   final String title;
   final String subtitle;
   final String url;
+  final String githubUrl;
   final String tag;
 
   @override
@@ -54,6 +56,15 @@ class ProjectTile extends StatelessWidget {
               fontSize: Get.textTheme.bodyLarge!.fontSize,
             ),
           ),
+          Row(
+            children: [
+              IconButton(
+                  onPressed: () {
+                    launchUrl(Uri.parse(githubUrl));
+                  },
+                  icon: Icon(EvaIcons.github)),
+            ],
+          )
         ],
       ),
     );

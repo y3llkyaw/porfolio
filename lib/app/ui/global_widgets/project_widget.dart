@@ -44,6 +44,7 @@ class ProjectWidget extends StatelessWidget {
                 final firstTag = tags.isNotEmpty ? tags[0].toString() : '';
                 return ProjectTile(
                   title: title,
+                  githubUrl: data['githubUrl'] ?? '',
                   subtitle: description,
                   url: url,
                   tag: firstTag,

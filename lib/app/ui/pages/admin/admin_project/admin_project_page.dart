@@ -40,6 +40,7 @@ class AdminProjectPage extends StatelessWidget {
                     children: [
                       Expanded(
                         child: ProjectTile(
+                          githubUrl: data['githubUrl'] ?? '',
                           title: title,
                           subtitle: description,
                           url: url,

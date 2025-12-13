@@ -4,7 +4,7 @@ import 'package:porfolio_yhk/app/bindings/admin_binding.dart';
 import 'package:porfolio_yhk/app/controllers/admin_home_page_controller.dart';
 import 'package:porfolio_yhk/app/ui/pages/admin/admin_education/admin_education_page.dart';
 import 'package:porfolio_yhk/app/ui/pages/admin/admin_project/admin_project_page.dart';
-import 'package:porfolio_yhk/app/ui/pages/admin/admin_skills/admin_skill_page.dart';
+import 'package:porfolio_yhk/app/ui/pages/admin/admin_bio/admin_bio_page.dart';
 
 class AdminHomePage extends GetView<AdminBinding> {
   const AdminHomePage({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class WebLayout extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Obx(() => Text(
-            '${controller.selectedIndex.value == 0 ? "Projects" : controller.selectedIndex.value == 1 ? "Education and Experiences" : "Skills"} Page')),
+            '${controller.selectedIndex.value == 0 ? "Projects" : controller.selectedIndex.value == 1 ? "Education and Experiences" : "Bio"} Page')),
       ),
       drawer: Drawer(
         child: Obx(
@@ -72,8 +72,8 @@ class WebLayout extends StatelessWidget {
                   controller.selectedIndex.value = 2;
                   Navigator.pop(context);
                 },
-                leading: Icon(Icons.code),
-                title: Text('Skills'),
+                leading: Icon(Icons.person),
+                title: Text('Bio'),
               ),
             ],
           ),
@@ -84,7 +84,7 @@ class WebLayout extends StatelessWidget {
           child: [
             AdminProjectPage(),
             AdminEducationPage(),
-            AdminSkillPage(),
+            AdminBioPage(),
           ][controller.selectedIndex.value],
         ),
       ),
