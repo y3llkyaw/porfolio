@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:icons_plus/icons_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ProjectTile extends StatelessWidget {
@@ -62,7 +62,7 @@ class ProjectTile extends StatelessWidget {
                   onPressed: () {
                     launchUrl(Uri.parse(githubUrl));
                   },
-                  icon: Icon(EvaIcons.github)),
+                  icon: FaIcon(FontAwesomeIcons.github)),
             ],
           )
         ],

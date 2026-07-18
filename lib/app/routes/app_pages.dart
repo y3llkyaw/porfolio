@@ -7,6 +7,7 @@ import 'package:porfolio_yhk/app/ui/pages/admin/admin_login_page.dart';
 
 import '../bindings/home_binding.dart';
 import '../ui/pages/home_page/home_page.dart';
+import '../ui/pages/privacy_policy/privacy_policy_page.dart';
 import '../ui/pages/unknown_route_page/unknown_route_page.dart';
 import 'app_routes.dart';
 
@@ -40,6 +41,11 @@ class AppPages {
       name: AppRoutes.ADMIN,
       page: () => AdminLoginPage(),
       binding: AdminBinding(),
+      transition: _defaultTransition,
+    ),
+    GetPage(
+      name: AppRoutes.SPLIT_EVENLY_PRIVACY_POLICY,
+      page: () => const PrivacyPolicyPage(),
       transition: _defaultTransition,
     ),
   ];

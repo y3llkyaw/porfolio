@@ -30,9 +30,9 @@ dependencies:
   cloud_firestore: ^6.1.0
   google_fonts: ^6.3.3
   url_launcher: ^6.3.2
-  icons_plus: ^5.0.0
   timelines_plus: ^1.0.7
   firebase_database: ^12.1.0
+  font_awesome_flutter: ^11.0.0
 
 
 dev_dependencies:
@@ -65,8 +65,8 @@ dev_dependencies:
   test: ^1.26.2
 
 flutter:
-  assets:
-    - assets/icons/
-    - assets/image/
-    - assets/animation/
+  # assets:
+  #   - assets/icons/
+  #   - assets/image/
+  #   - assets/animation/
   uses-material-design: true

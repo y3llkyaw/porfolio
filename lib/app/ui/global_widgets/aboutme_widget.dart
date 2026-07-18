@@ -1,9 +1,9 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:icons_plus/icons_plus.dart';
 import 'package:porfolio_yhk/app/controllers/admin_bio_controller.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -65,7 +65,7 @@ class AboutMeWidget extends GetView<AdminBioController> {
                   await launchUrl(
                       Uri.parse("https://www.linkedin.com/in/yellhtetkyaw"));
                 },
-                icon: Icon(BoxIcons.bxl_linkedin),
+                icon: FaIcon(FontAwesomeIcons.linkedin),
               ),
               IconButton(
                 onPressed: () async {
@@ -78,7 +78,7 @@ class AboutMeWidget extends GetView<AdminBioController> {
                     log(e.toString());
                   }
                 },
-                icon: Icon(BoxIcons.bxl_github),
+                icon: FaIcon(FontAwesomeIcons.github),
               ),
             ],
           )
